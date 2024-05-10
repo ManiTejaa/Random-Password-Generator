@@ -1,31 +1,27 @@
-import java.util.Scanner;
-
 public class Generator {
-    final static String s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()-_=+\\/~?";
-    final static int s_len =  80;
+    final static String CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()-_=+\\/~?";
+    final static int LENGTH =  80;
 
-    Scanner sc = new Scanner(System.in);
+//    Scanner sc = new Scanner(System.in);
+//
+//    public Generator(){
+//        requestPassword();
+//    }
 
-    public Generator(){
-        requestPassword();
-    }
+//    private void requestPassword() {
+//        System.out.println("Enter the length of the password");
+//        int length = sc.nextInt();
+//        System.out.println("Generated password : " + generatePassword(length));
+//    }
 
-    private void requestPassword() {
-        System.out.println("Enter the length of the password");
-        int length = sc.nextInt();
-        System.out.println("Generated password : " + generatePassword(length));
-    }
-
-    private static String generatePassword(int length) {
-        final StringBuilder password = new StringBuilder();
-
-        int max = s_len - 1;
-        int range = max + 1;
+    public static String generateRandomPassword(int length) {
+        StringBuilder password = new StringBuilder();
 
         for (int i = 0; i < length; i++) {
-            int index = (int) (Math.random() * range);
-            password.append(s.charAt(index));
+            int index = (int) (Math.random() * (LENGTH));
+            password.append(CHARACTERS.charAt(index));
         }
+
         return password.toString();
     }
 }

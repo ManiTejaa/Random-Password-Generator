@@ -1,6 +1,7 @@
 
-public class Main {
+public class Main extends  PasswordGenerator {
     public static void main(String[] args) {
-        Generator generator = new Generator();
+        PasswordGenerator generator = new PasswordGenerator();
+        generator.setVisible(true);
     }
 }
